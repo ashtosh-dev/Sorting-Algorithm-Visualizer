@@ -73,19 +73,9 @@ Then open `http://localhost:8000` in your browser.
 - **Insertion Sort**: Builds sorted array one item at a time by inserting elements into their correct position
 - **Radix Sort**: Non-comparative sorting algorithm that processes digits from least significant to most significant
 
-## Team
+## Credits
 
-**Team Name**: TechHustle
-
-**Team Members**:
-- Freyan Vas
-- Ankit Shah
-- Ashutosh Shenoy
-- Aston Lewis
-- Prithvisagar K
-- Reevan D'souza
-
-**Faculty**: Ms Pratibha Ganapati Gaonkar
+This project is a fork and enhancement of the original [Sorting Algorithm Visualizer](https://github.com/ankeet15/Sorting-Algorithm-Visualizer) by **ankeet15**.
 
 ## Technologies Used
 
@@ -93,10 +83,6 @@ Then open `http://localhost:8000` in your browser.
 - CSS3
 - JavaScript (ES6+)
 - Font Awesome Icons
-
-## License
-
-This project is open source and available under the MIT License.
 
 ## Contributing
 
