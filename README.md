@@ -32,7 +32,7 @@ A web-based interactive visualizer for sorting algorithms that helps understand 
 
 1. Clone the repository or download the files:
 ```bash
-git clone https://github.com/ankeet15/Sorting-Algorithm-Visualizer.git
+git clone https://github.com/ashtosh-dev/Sorting-Algorithm-Visualizer.git
 cd sem3_dsa_project
 ```
 
