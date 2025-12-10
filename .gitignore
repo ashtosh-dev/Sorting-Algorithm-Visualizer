@@ -1,0 +1,27 @@
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Node modules (if using npm in future)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Log files
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+
+# Build files (if added later)
+dist/
+build/

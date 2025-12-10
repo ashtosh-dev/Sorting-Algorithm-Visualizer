@@ -51,6 +51,11 @@ let array = [];
                     bar.classList.add('comparing');
                 }
 
+                const label = document.createElement('div');
+                label.classList.add('array-bar-label');
+                label.textContent = value;
+
+                bar.appendChild(label);
                 arrayContainer.appendChild(bar);
             });
         }
@@ -180,5 +185,62 @@ let array = [];
             statusElement.textContent = 'Insertion Sort completed!';
             isSorting = false;
             enableButtons();
+        }
+
+        async function radixSort() {
+            if (isSorting) return;
+            isSorting = true;
+            disableButtons();
+            statusElement.textContent = 'Radix Sort in progress...';
+
+            const n = array.length;
+            const sortedIndices = [];
+            const max = Math.max(...array);
+            
+            let exp = 1;
+            while (Math.floor(max / exp) > 0) {
+                await countingSortByDigit(exp, sortedIndices);
+                exp *= 10;
+            }
+
+            for (let i = 0; i < n; i++) sortedIndices.push(i);
+            displayArray([], [], sortedIndices);
+            
+            statusElement.textContent = 'Radix Sort completed!';
+            isSorting = false;
+            enableButtons();
+        }
+
+        async function countingSortByDigit(exp, sortedIndices) {
+            const n = array.length;
+            const output = new Array(n);
+            const count = new Array(10).fill(0);
+
+            for (let i = 0; i < n; i++) {
+                displayArray([i], [], sortedIndices);
+                await sleep(getDelay());
+                
+                const digit = Math.floor((array[i] / exp) % 10);
+                count[digit]++;
+            }
+
+            for (let i = 1; i < 10; i++) {
+                count[i] += count[i - 1];
+            }
+
+            for (let i = n - 1; i >= 0; i--) {
+                displayArray([i], [], sortedIndices);
+                await sleep(getDelay());
+                
+                const digit = Math.floor((array[i] / exp) % 10);
+                output[count[digit] - 1] = array[i];
+                count[digit]--;
+            }
+
+            for (let i = 0; i < n; i++) {
+                displayArray([i], [], sortedIndices);
+                await sleep(getDelay());
+                array[i] = output[i];
+            }
         }
         generateArray();
