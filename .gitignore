@@ -25,3 +25,5 @@ Thumbs.db
 # Build files (if added later)
 dist/
 build/
+
+.vscode/
